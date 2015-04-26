@@ -42,7 +42,7 @@ function _s_setup() {
 	/*
 	 * 开启文章特色图像支持
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * 更多信息请参考：http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
