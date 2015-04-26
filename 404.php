@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (not found).
+ * 显示404页面的模板。
  *
  * @package _s
  */
@@ -12,19 +12,19 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( '404，页面未找到！', '_s' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
+					<p><?php esc_html_e( '哦哦，您要找的内容去火星了，这里什么都没有，您可以使用下方的搜索试试', '_s' ); ?></p>
 
 					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php if ( _s_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+					<?php if ( _s_categorized_blog() ) : // 有多个分类时，在小工具中显示。 ?>
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', '_s' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( '常用分类', '_s' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories( array(
@@ -40,8 +40,8 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
+						/* 翻译： %1$s: smiley */
+						$archive_content = '<p>' . sprintf( __( '在文章存档中查找 %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
