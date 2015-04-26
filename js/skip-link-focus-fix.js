@@ -5,8 +5,7 @@
 
 	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
 		window.addEventListener( 'hashchange', function() {
-			var id = location.hash.substring( 1 ),
-				element;
+			var id = location.hash.substring( 1 ), element;
 
 			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
 				return;
