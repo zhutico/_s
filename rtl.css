@@ -1,9 +1,7 @@
 /*
 Theme Name: _s
 
-Adding support for language written in a Right To Left (RTL) direction is easy -
-it's just a matter of overwriting all the horizontal positioning attributes
-of your CSS stylesheet in a separate stylesheet file named rtl.css.
+添加RTL支持，您可以添加一个单独的样式表文件名为rtl.css，用来覆盖所有style.css中的水平定位属性。
 
 http://codex.wordpress.org/Right_to_Left_Language_Support
 
