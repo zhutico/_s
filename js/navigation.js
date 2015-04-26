@@ -1,8 +1,8 @@
 /**
  * navigation.js
  *
- * Handles toggling the navigation menu for small screens and enables tab
- * support for dropdown menus.
+ * Tab菜单和下拉菜单切换
+ * 支持下拉菜单
  */
 ( function() {
 	var container, button, menu, links, subMenus;
@@ -19,7 +19,7 @@
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
-	// Hide menu toggle button if menu is empty and return early.
+	// 如果菜单为空隐藏菜单切换按钮
 	if ( 'undefined' === typeof menu ) {
 		button.style.display = 'none';
 		return;
@@ -42,23 +42,23 @@
 		}
 	};
 
-	// Get all the link elements within the menu.
+	// 获取菜单中的所有链接元素
 	links    = menu.getElementsByTagName( 'a' );
 	subMenus = menu.getElementsByTagName( 'ul' );
 
-	// Set menu items with submenus to aria-haspopup="true".
+	// 设置二级菜单列表属性 aria-haspopup="true".
 	for ( var i = 0, len = subMenus.length; i < len; i++ ) {
 		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 	}
 
-	// Each time a menu link is focused or blurred, toggle focus.
+	// 菜单链接获得焦点，失去焦点，焦点切换遍历
 	for ( i = 0, len = links.length; i < len; i++ ) {
 		links[i].addEventListener( 'focus', toggleFocus, true );
 		links[i].addEventListener( 'blur', toggleFocus, true );
 	}
 
 	/**
-	 * Sets or removes .focus class on an element.
+	 * 移除元素的.focus
 	 */
 	function toggleFocus() {
 		var self = this;
