@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * 文章页面模板
  *
  * @package _s
  */
@@ -17,13 +17,13 @@ get_header(); ?>
 			<?php the_post_navigation(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template
+				// 如果开启评论或者至少有一条评论，显示评论区域
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 			?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; // loop结束. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
