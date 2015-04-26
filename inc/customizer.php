@@ -1,12 +1,12 @@
 <?php
 /**
- * _s Theme Customizer
+ * _s 主题自定义
  *
  * @package _s
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * 在主题自定义中添加站点标题和副标题选项
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -18,7 +18,7 @@ function _s_customize_register( $wp_customize ) {
 add_action( 'customize_register', '_s_customize_register' );
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * js处理主题自定义页面重新加载时的异步加载
  */
 function _s_customize_preview_js() {
 	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
