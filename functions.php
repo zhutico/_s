@@ -1,75 +1,73 @@
 <?php
 /**
- * _s functions and definitions
+ * _s 函数和定义
  *
  * @package _s
  */
 
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * 基于主题设计和样式表设置内容的宽度
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 640; /* 像素 */
 }
 
 if ( ! function_exists( '_s_setup' ) ) :
 /**
- * Sets up theme defaults and registers support for various WordPress features.
+ * 设置主题默认和注册后支持的各种功能
  *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
+ * 请注意：这个函数是个钩子函数，会挂钩到after_setup_theme中，在
+ * 运行钩子初始化之前，一些功能应该在运行钩子之前添加，如
+ * 文章特色图像的支持
  */
 function _s_setup() {
 
 	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
+	 * 使主题支持自动翻译
+	 * 翻译文件可以/languages/中
+	 * 如果您要基于 _s创建主题，通过查找并替换
+	 * 在您的主题名称和所有的主题模板文件中修改 '_s' 
 	 */
 	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
+	// 在head 中添加文章/页面、评论的RSS feed
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
+	 * 使用WodPress管理页面标题
+	 * 通过添加主题支持，我们可以使用WordPress提供给我们的编码方式，而不是以硬编码的方式
 	 */
 	add_theme_support( 'title-tag' );
 
 	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * 开启文章特色图像支持
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// 使用wp_nav_menu() 在主题某一位置添加菜单
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
+		'primary' => __( '主菜单', '_s' ),
 	) );
 
 	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
+	 * 改变默认值，增强搜索表单，评论表单和评论内容等
+	 * 输出有效的HTML5
 	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
 	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
+	 * 开启文章格式支持
+	 * 更多信息请参考：http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
+	// 自定义背景
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -79,13 +77,13 @@ endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
- * Register widget area.
+ * 注册小工具区域
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function _s_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_s' ),
+		'name'          => __( '侧边栏', '_s' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -97,7 +95,7 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * 加载JS和CSS
  */
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
@@ -113,26 +111,26 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * 自定义顶部内容
  */
 //require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Custom template tags for this theme.
+ * 自定义模板标签
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * 自定义函数，独立于主题模板之外
  */
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
+ * 补充定制
  */
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * 加载Jetpack兼容性文件。
  */
 require get_template_directory() . '/inc/jetpack.php';
