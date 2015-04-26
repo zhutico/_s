@@ -1,17 +1,17 @@
 <?php
 /**
- * The template for displaying comments.
+ * 评论模板
  *
- * The area of the page that contains both current comments
- * and the comment form.
+ * 包含当前评论区域
+ * 和评论表单
  *
  * @package _s
  */
 
 /*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
+ * 如果当前文章或者页面设有密码保护
+ * 在访问者输入密码之前
+ * 不加载评论区域
  */
 if ( post_password_required() ) {
 	return;
@@ -20,27 +20,27 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
+	<?php // 你可以从这里开始编辑 ?>
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', '_s' ),
+				printf( _nx( '&ldquo;%2$s&rdquo;共有 1 条评论', '&ldquo;%2$s&rdquo;共有 %1$s 条评论', get_comments_number(), '评论', '_s' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // 评论分页 ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', '_s' ); ?></h2>
+			<h2 class="screen-reader-text"><?php _e( '评论分页', '_s' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', '_s' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', '_s' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '更早的评论', '_s' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( '更新的评论', '_s' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		<?php endif; // 检查评论分页 ?>
 
 		<ol class="comment-list">
 			<?php
@@ -51,13 +51,13 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // 显示评论分页 ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', '_s' ); ?></h2>
+			<h2 class="screen-reader-text"><?php _e( '评论分页', '_s' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', '_s' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', '_s' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '更早的评论', '_s' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( '更新的评论', '_s' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
@@ -66,10 +66,10 @@ if ( post_password_required() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
+		// 如果评论关闭，显示相应的提示信息
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', '_s' ); ?></p>
+		<p class="no-comments"><?php _e( '评论已关闭', '_s' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
