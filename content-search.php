@@ -1,8 +1,8 @@
 <?php
 /**
- * The template part for displaying results in search pages.
+ * 搜索页面内容模板
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * 了解更多请访问：http://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
