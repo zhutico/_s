@@ -1,11 +1,11 @@
 /**
- * Theme Customizer enhancements for a better user experience.
+ * 这一部分内容是为了获得更好的用户体验
  *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ * 包含的主题预览自定义处理程序的改变异步加载
  */
 
 ( function( $ ) {
-	// Site title and description.
+	// 网站标题和描述
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a' ).text( to );
@@ -16,7 +16,7 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
-	// Header text color.
+	// 顶部文本颜色
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
