@@ -17,16 +17,16 @@
 
 	<div class="entry-content">
 		<?php
-			/* translators: %s: Name of current post */
+			/* 翻译： %s： 当前文章/页面的名称 */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+				__( '查看详情 %s <span class="meta-nav">&rarr;</span>', '_s' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . __( '页面：', '_s' ),
 				'after'  => '</div>',
 			) );
 		?>
