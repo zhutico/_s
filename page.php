@@ -1,11 +1,11 @@
 <?php
 /**
- * The template for displaying all pages.
+ * 页面模板
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * 此模板用来显示所有默认页面的内容
+ * 请注意，这是WordPress构建页面
+ * 和其他的页面一起，可以在你的WordPress站点中
+ * 使用不同的模板
  *
  * @package _s
  */
@@ -20,13 +20,13 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
+					// 如果评论开启或者至少有一条评论，在页面中显示评论模板
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // loop结束 ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
