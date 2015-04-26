@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * 侧边栏模板，包含小工具
  *
  * @package _s
  */
