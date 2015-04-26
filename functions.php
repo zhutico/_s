@@ -126,7 +126,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * 补充定制
+ * 主题自定义补充
  */
 require get_template_directory() . '/inc/customizer.php';
 
