@@ -1,50 +1,48 @@
 /*
 Theme Name: _s
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Theme URI: http://www.zhuti.co/dev/createtheme/
+Author: Automattic,zhutico
+Author URI: http://underscores.me/,http://www.zhuti.co/dev/createtheme/
+Description: 
 Version: 1.0.0
-License: GNU General Public License v2 or later
+License: GNU General Public License v2 或更新版本
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: _s
 Tags:
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+主题基于GPL协议，您可以用它来开发一款有趣的，更酷的主题，并分享给其他使用者。
 
-_s is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+_s 基于 Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+样式规范需要感谢 Nicolas Gallagher 和 Jonathan Neal 的工作成果，更多信息请访问：http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
+>>> style.css包含：
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Asides
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# 规范
+# 排版
+# 元素
+# 表单
+# 导航
+	## 链接
+	## 菜单
+# 无障碍阅读
+# 对齐
+# 清除浮动
+# 小工具
+# 内容
+    ## 文章和页面
+	## 侧边栏
+	## 评论
+# 瀑布流
+# 媒体
+	## 标题
+	## 相册
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Normalize
+# 规范
 --------------------------------------------------------------*/
 html {
 	font-family: sans-serif;
@@ -263,7 +261,7 @@ th {
 }
 
 /*--------------------------------------------------------------
-# Typography
+# 排版
 --------------------------------------------------------------*/
 body,
 button,
@@ -342,7 +340,7 @@ big {
 }
 
 /*--------------------------------------------------------------
-# Elements
+# 元素
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
@@ -415,7 +413,7 @@ table {
 }
 
 /*--------------------------------------------------------------
-# Forms
+# 表单
 --------------------------------------------------------------*/
 button,
 input[type="button"],
@@ -488,10 +486,10 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Navigation
+# 导航
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Links
+## 链接
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
@@ -517,7 +515,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-## Menus
+## 菜单
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
@@ -592,7 +590,7 @@ a:active {
 .main-navigation .current_page_ancestor > a {
 }
 
-/* Small menu. */
+/* 手机菜单 */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -630,7 +628,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Accessibility
+# 无障碍阅读
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -664,7 +662,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Alignments
+# 对齐
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
@@ -686,7 +684,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Clearings
+# 清除浮动
 --------------------------------------------------------------*/
 .clear:before,
 .clear:after,
@@ -714,27 +712,27 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Widgets
+# 小工具
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
 }
 
-/* Make sure select elements fit in widgets. */
+/* 确保select元素在小工具中正常显示 */
 .widget select {
 	max-width: 100%;
 }
 
-/* Search widget. */
+/* 搜索小工具*/
 .widget_search .search-submit {
 	display: none;
 }
 
 /*--------------------------------------------------------------
-# Content
+# 内容
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Posts and pages
+## 文章和页面
 --------------------------------------------------------------*/
 .sticky {
 	display: block;
@@ -766,7 +764,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-## Asides
+## 侧边栏
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -774,7 +772,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-## Comments
+## 评论
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -785,15 +783,15 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Infinite scroll
+# 瀑布流
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+/* 当主题支持并使用瀑布流时，隐藏全局元素*/
+.infinite-scroll .posts-navigation, /* 更旧的文章/更新的文章分页链接（一直隐藏）*/
+.infinite-scroll.neverending .site-footer { /* 页面底部（当设置为滚动时） */
 	display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* 当瀑布流加载到底时，我们需要重新显示被隐藏的元素*/
 .infinity-end.neverending .site-footer {
 	display: block;
 }
@@ -818,7 +816,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Captions
+## 标题
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -839,7 +837,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Galleries
+## 相册
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
