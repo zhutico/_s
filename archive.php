@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * 文章存档页面模板。
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * 了解更多请访问：http://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
@@ -21,13 +21,13 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
+			<?php /* Loop开始 */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					/* 包括在内容中使用特定格式的模板。
+					 *如果你想在子主题中重写这一部分，然后通过文件引入。
+					 * 引入content-___.php （___ 是文章格式名称）替换这一部分。
 					 */
 					get_template_part( 'content', get_post_format() );
 				?>
