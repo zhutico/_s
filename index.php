@@ -1,12 +1,12 @@
 <?php
 /**
- * The main template file.
+ * 首页模板
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * 这是一个WordPress主题最通用的模板文件
+ * 另一个必需文件是style.css
+ * 当没有找到匹配的模板文件时，它用来显示页面内容
+ * 例如： 当home.php不存在时使用此页面来页面内容
+ * 更多信息请参考：http://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
@@ -18,13 +18,13 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
+			<?php /* Loop开始 */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					/* 包括在内容中使用特定格式的模板。
+					 *如果你想在子主题中重写这一部分，然后通过文件引入。
+					 * 引入content-___.php （___ 是文章格式名称）替换这一部分。
 					 */
 					get_template_part( 'content', get_post_format() );
 				?>
